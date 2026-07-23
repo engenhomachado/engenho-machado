@@ -1,0 +1,422 @@
+/* =====================================================
+   ENGENHO MACHADO
+   Landing Page Premium
+   Parte 1
+===================================================== */
+
+:root{
+
+--verde:#0F2E1D;
+--verde-claro:#2D5B3D;
+
+--dourado:#B89048;
+--caqui:#D7C59A;
+--marrom:#7B5B24;
+
+--branco:#ffffff;
+--cinza:#F7F7F7;
+
+--texto:#F5F5F5;
+--texto-escuro:#222;
+
+--shadow:0 20px 50px rgba(0,0,0,.30);
+
+--radius:18px;
+
+}
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Lato',sans-serif;
+
+background:var(--verde);
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+/* ==========================
+TIPOGRAFIA
+========================== */
+
+h1,h2,h3,h4{
+
+font-family:'Cinzel',serif;
+
+font-weight:600;
+
+letter-spacing:1px;
+
+}
+
+p{
+
+font-size:18px;
+
+line-height:1.9;
+
+}
+
+/* ==========================
+CONTAINER
+========================== */
+
+.container{
+
+width:90%;
+
+max-width:1280px;
+
+margin:auto;
+
+}
+
+/* ==========================
+NAVBAR
+========================== */
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:999;
+
+transition:.4s;
+
+}
+
+.navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 60px;
+
+backdrop-filter:blur(18px);
+
+background:rgba(15,46,29,.45);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo img{
+
+height:78px;
+
+transition:.3s;
+
+}
+
+.navbar ul{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+.navbar a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:15px;
+
+letter-spacing:1px;
+
+transition:.3s;
+
+}
+
+.navbar a:hover{
+
+color:var(--dourado);
+
+}
+
+/* ==========================
+BOTÃO MENU
+========================== */
+
+.botao-menu{
+
+padding:14px 30px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,var(--dourado),#d8b97c);
+
+color:#222;
+
+font-weight:bold;
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+}
+
+.botao-menu:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* ==========================
+HERO
+========================== */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+background:url("img/hero.jpg") center center;
+
+background-size:cover;
+
+overflow:hidden;
+
+}
+
+.overlay{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(0,0,0,.25),
+
+rgba(10,25,15,.80)
+
+);
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:10;
+
+text-align:center;
+
+width:90%;
+
+max-width:900px;
+
+}
+
+.hero-logo{
+
+width:220px;
+
+margin-bottom:35px;
+
+animation:flutuar 5s infinite ease-in-out;
+
+}
+
+.hero h1{
+
+font-size:76px;
+
+color:white;
+
+margin-bottom:25px;
+
+text-shadow:0 10px 25px rgba(0,0,0,.50);
+
+}
+
+.hero p{
+
+font-size:26px;
+
+color:var(--caqui);
+
+margin-bottom:45px;
+
+}
+
+/* ==========================
+BOTÕES HERO
+========================== */
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(135deg,var(--dourado),#d5b474);
+
+padding:18px 42px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:#222;
+
+font-weight:bold;
+
+font-size:17px;
+
+transition:.35s;
+
+box-shadow:var(--shadow);
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-5px);
+
+}
+
+.btn-secondary{
+
+padding:18px 42px;
+
+border:2px solid rgba(255,255,255,.30);
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+backdrop-filter:blur(20px);
+
+transition:.35s;
+
+}
+
+.btn-secondary:hover{
+
+background:white;
+
+color:var(--verde);
+
+}
+
+/* ==========================
+SCROLL
+========================== */
+
+::-webkit-scrollbar{
+
+width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0d2417;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--dourado);
+
+border-radius:30px;
+
+}
+
+/* ==========================
+ANIMAÇÕES
+========================== */
+
+@keyframes flutuar{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+.fade{
+
+opacity:0;
+
+transform:translateY(70px);
+
+transition:1s;
+
+}
+
+.fade.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}

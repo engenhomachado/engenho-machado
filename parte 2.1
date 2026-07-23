@@ -1,0 +1,791 @@
+/* ==========================================
+   ENGENHO MACHADO
+   STYLE.CSS
+   PARTE 2.1
+========================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+:root{
+
+    --verde:#24352A;
+    --verde2:#1A261E;
+    --dourado:#B89048;
+    --marrom:#7B5524;
+    --caqui:#C8B891;
+    --branco:#F8F6F1;
+
+    --sombra:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--verde2);
+
+    color:var(--branco);
+
+    font-family:'Lato',sans-serif;
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+
+}
+
+/* LINKS */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+/* IMAGENS */
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/* TITULOS */
+
+h1,h2,h3{
+
+    font-family:'Cinzel',serif;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+}
+
+/* CONTAINER */
+
+.container{
+
+    width:min(1180px,92%);
+
+    margin:auto;
+
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    transition:.4s;
+
+    background:rgba(0,0,0,.15);
+
+    backdrop-filter:blur(12px);
+
+}
+
+header.scrolled{
+
+    background:rgba(20,30,24,.95);
+
+    box-shadow:var(--sombra);
+
+}
+
+.nav{
+
+    height:90px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:65px;
+
+}
+
+.logo span{
+
+    font-family:'Cinzel',serif;
+
+    font-size:22px;
+
+    color:var(--dourado);
+
+}
+
+/* MENU */
+
+.menu{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.menu a{
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.menu a:hover{
+
+    color:var(--dourado);
+
+}
+
+/* ===========================
+HERO
+=========================== */
+
+.hero{
+
+    height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    rgba(10,20,12,.45),
+
+    rgba(10,20,12,.72)
+
+    );
+
+    z-index:2;
+
+}
+
+.hero img{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(900px,92%);
+
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    font-size:24px;
+
+    color:#F8F6F1;
+
+    margin-bottom:40px;
+
+}
+
+/* BOTÃO */
+
+.botao{
+
+    display:inline-block;
+
+    background:var(--dourado);
+
+    color:white;
+
+    padding:18px 45px;
+
+    border-radius:60px;
+
+    font-weight:bold;
+
+    transition:.35s;
+
+    box-shadow:var(--sombra);
+
+}
+
+.botao:hover{
+
+    transform:translateY(-4px);
+
+    background:#CAA15C;
+
+}
+
+/* SCROLL */
+
+.scroll{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    z-index:10;
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    animation:sobe 2s infinite;
+
+}
+
+@keyframes sobe{
+
+0%{
+
+transform:translate(-50%,0);
+
+}
+
+50%{
+
+transform:translate(-50%,12px);
+
+}
+
+100%{
+
+transform:translate(-50%,0);
+
+}
+
+}
+
+/* PRIMEIRA SEÇÃO */
+
+section{
+
+    padding:110px 0;
+
+}
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.titulo h2{
+
+    font-size:46px;
+
+    color:var(--dourado);
+
+}
+
+.titulo p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    margin-top:20px;
+
+    color:#d8d8d8;
+
+    font-size:20px;
+
+}
+/* =====================================================
+   PARTE 2.2
+   HISTÓRIA • CARDS • BOTÕES • GALERIA
+=====================================================*/
+
+/* História */
+
+.historia{
+
+    background:#203126;
+
+}
+
+.historia-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.historia img{
+
+    border-radius:18px;
+
+    box-shadow:var(--sombra);
+
+    transition:.5s;
+
+}
+
+.historia img:hover{
+
+    transform:scale(1.02);
+
+}
+
+.historia h2{
+
+    color:var(--dourado);
+
+    font-size:44px;
+
+    margin-bottom:25px;
+
+}
+
+.historia p{
+
+    margin-bottom:18px;
+
+    font-size:18px;
+
+    color:#e5e5e5;
+
+}
+
+/* Cards */
+
+.cards{
+
+    background:linear-gradient(
+
+        180deg,
+
+        #203126,
+
+        #162118
+
+    );
+
+}
+
+.cards-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:#2a3c30;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    box-shadow:var(--sombra);
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.card img{
+
+    height:250px;
+
+    object-fit:cover;
+
+}
+
+.card-body{
+
+    padding:30px;
+
+}
+
+.card h3{
+
+    color:var(--dourado);
+
+    margin-bottom:18px;
+
+    font-size:26px;
+
+}
+
+.card p{
+
+    color:#ececec;
+
+}
+
+/* Botões Premium */
+
+.botao-outline{
+
+    display:inline-block;
+
+    padding:16px 38px;
+
+    border:2px solid var(--dourado);
+
+    color:var(--dourado);
+
+    border-radius:60px;
+
+    transition:.35s;
+
+    font-weight:bold;
+
+}
+
+.botao-outline:hover{
+
+    background:var(--dourado);
+
+    color:white;
+
+}
+
+/* Galeria */
+
+.galeria{
+
+    background:#18231b;
+
+}
+
+.galeria-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.galeria-grid img{
+
+    border-radius:15px;
+
+    height:320px;
+
+    object-fit:cover;
+
+    transition:.45s;
+
+    cursor:pointer;
+
+}
+
+.galeria-grid img:hover{
+
+    transform:scale(1.04);
+
+}
+
+/* Banner */
+
+.banner{
+
+    padding:150px 0;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+
+    rgba(0,0,0,.55),
+
+    rgba(0,0,0,.55)
+
+    ),
+
+    url("img/banner.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+}
+
+.banner h2{
+
+    font-size:58px;
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+.banner p{
+
+    font-size:22px;
+
+    max-width:800px;
+
+    margin:auto;
+
+    margin-bottom:35px;
+
+}
+
+/* Botões de Links */
+
+.links{
+
+    background:#203126;
+
+}
+
+.links-grid{
+
+    display:grid;
+
+    gap:22px;
+
+    max-width:720px;
+
+    margin:auto;
+
+}
+
+.link-card{
+
+    background:#2d4034;
+
+    border-radius:18px;
+
+    padding:24px 28px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.link-card:hover{
+
+    transform:translateX(8px);
+
+    background:#35513f;
+
+}
+
+.link-card span{
+
+    font-size:22px;
+
+    color:white;
+
+}
+
+.link-card i{
+
+    font-size:28px;
+
+    color:var(--dourado);
+
+}/* =====================================================
+   PARTE 2.3
+   LINHA DO TEMPO • MAPA • RODAPÉ • ANIMAÇÕES
+=====================================================*/
+
+/* Linha do Tempo */
+
+.timeline{
+
+    background:#18231b;
+    position:relative;
+
+}
+
+.timeline::before{
+
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:rgba(184,144,72,.35);
+
+}
+
+.timeline-item{
+
+    width:50%;
+    padding:30px 60px;
+    position:relative;
+
+}
+
+.timeline-item:nth-child(odd){
+
+    left:0;
+    text-align:right;
+
+}
+
+.timeline-item:nth-child(even){
+
+    left:50%;
+
+}
+
+.timeline-card{
+
+    background:#2b3b31;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:var(--sombra);
+    transition:.4s;
+
+}
+
+.timeline-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.timeline-card h3{
+
+    color:var(--dourado);
+    margin-bottom:15px;
+
+}
+
+.timeline-card p{
+
+    color:#ececec;
+
+}
+
+.timeline-circle{
+
+    position:absolute;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:var(--dourado);
+    top:45px;
+    right:-11px;
+
+}
+
+.timeline-item:nth-child(even) .
